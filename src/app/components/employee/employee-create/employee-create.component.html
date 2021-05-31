@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-md-4 register-employee">
+      <!-- form card register -->
+      <div class="card-body">
+        <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="empApiService.selectedEmployee._id">
+            <div class="row">
+              <div class="input-field col s12">
+                <input type="text" name="name" #name="ngModel" [(ngModel)]="empApiService.selectedEmployee.name" placeholder="Enter FullName" required>
+               </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input type="text" name="email" #name="ngModel" [(ngModel)]="empApiService.selectedEmployee.email" placeholder="Enter Email">
+                
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input type="text" name="company" #name="ngModel" [(ngModel)]="empApiService.selectedEmployee.company" placeholder="Enter Company Name">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="department" #name="ngModel" [(ngModel)]="empApiService.selectedEmployee.department" placeholder="Enter Department Name">
+                  </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="role" #name="ngModel" [(ngModel)]="empApiService.selectedEmployee.role" placeholder="Enter Role">
+                  </div>
+              </div>
+            
+            <div class="row">
+              <div class="input-field col s12">
+                <button class="btn btn-custom right" type="button" (click)="resetForm(employeeForm)">Reset</button>
+                <button class="btn btn-custom right" type="submit" [disabled]="!employeeForm.valid">Submit</button>
+              </div>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
